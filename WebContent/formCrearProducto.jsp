@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
+
 
 <head>
   <!-- Required meta tags -->
@@ -27,7 +28,7 @@
     </nav>
     <div class="row">
       <div class="col-8">
-        <form>
+        <form action="formCrearProducto" method="POST">
           <div class="mb-3">
             <div class="form-group">
               <label for="nombre">Nombre</label>
@@ -56,18 +57,14 @@
             </div>
           </div>
 
-          <div class="mb-3">
+         <div class="mb-3">
             <div class="form-group">
               <label for="madein">Made in</label>
               <select id="madein" name="madein" class="form-control">
                 <option></option>
-                <option value="Afganistan">Afganistan</option>
-                <option value="Argelia">Argelia</option>
-                <option value="Australia">Australia</option>
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="Belarus">Belarus</option>
-                <option value="...">...</option>
-                <option value="todos los de la tabla estados">todos los de la tabla estados</option>
+                <c:forEach items="${estados }" var="estado">
+                    <option value="${estado.name }">${estado.name } : ${estado.continent }</option>
+                </c:forEach>
               </select>
             </div>
           </div>

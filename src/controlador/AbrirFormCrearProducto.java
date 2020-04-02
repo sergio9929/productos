@@ -1,11 +1,15 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import modelo.bean.Estado;
+import modelo.dao.ModeloEstado;
 
 /**
  * Servlet implementation class AbrirFormCrearProducto
@@ -27,7 +31,10 @@ public class AbrirFormCrearProducto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("abrirFormCrearProducto.jsp").forward(request, response);
+		ModeloEstado modeloestado=new ModeloEstado();
+		ArrayList<Estado> estados=modeloestado.getAll();
+		request.setAttribute("estados", estados);
+		request.getRequestDispatcher("formCrearProducto.jsp").forward(request, response);
 	}
 
 	/**
