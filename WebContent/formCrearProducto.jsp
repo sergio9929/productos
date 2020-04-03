@@ -21,8 +21,8 @@
   <div class="container my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="verProductos.html">Procutos</a></li>
+        <li class="breadcrumb-item"><a href="index">Home</a></li>
+        <li class="breadcrumb-item"><a href="verProductos">Productos</a></li>
         <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
       </ol>
     </nav>
@@ -109,28 +109,27 @@
           <div class="mb-3">
             <div class="">Tallas</div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="tallaS" value="S">
+              <input class="form-check-input" type="checkbox" name="talla" id="tallaS" value="S">
               <label class="form-check-label" for="tallaS">
                 S
               </label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="tallaM" value="M">
+              <input class="form-check-input" type="checkbox" name="talla" id="tallaM" value="M">
               <label class="form-check-label" for="tallaM">
                 M
               </label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="tallaL" value="L">
+              <input class="form-check-input" type="checkbox" name="talla" id="tallaL" value="L">
               <label class="form-check-label" for="tallaL">
                 L
               </label>
             </div>
-
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="descuento" id="" value="">
-              <label class="form-check-label" for="">
-                Todos de la tabla descuentos
+              <input class="form-check-input" type="checkbox" name="talla" id="tallaXL" value="XL">
+              <label class="form-check-label" for="tallaL">
+                XL
               </label>
             </div>
           </div>

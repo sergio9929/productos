@@ -60,7 +60,22 @@ public class ModeloProducto extends Conector {
 	}
 	
 	public void insert(Producto producto) {
-		//TODO implementar
+		try {
+			PreparedStatement pstInsert = conexion.prepareStatement("insert into productos values(?,?,?,?,?,?,?,?,?)");
+			pstInsert.setInt(1, producto.getId());
+			pstInsert.setString(2, producto.getNombre());
+			pstInsert.setInt(3, producto.getStock());
+			pstInsert.setDate(4, producto.getFecha_compra());
+			pstInsert.setString(5, producto.getColor());
+			pstInsert.setString(6, producto.getMade_in());
+			pstInsert.setDouble(7, producto.getPrecio());
+			pstInsert.setInt(8, producto.getDescuento());
+			pstInsert.setString(9, producto.getTallas());
+			pstInsert.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void update(Producto producto) {
@@ -68,7 +83,14 @@ public class ModeloProducto extends Conector {
 	}
 	
 	public void delete(int id) {
-		//TODO implementar
+		try {
+			PreparedStatement pstDelete = conexion.prepareStatement("delete from productos where id=?");
+			pstDelete.setInt(1, id);
+			pstDelete.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public ArrayList<Producto> deLaTalla(Talla talla){

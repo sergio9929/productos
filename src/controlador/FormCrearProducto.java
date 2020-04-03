@@ -49,7 +49,7 @@ public class FormCrearProducto extends HttpServlet {
 		producto.setNombre(request.getParameter("nombre"));
 		producto.setStock(Integer.parseInt(request.getParameter("stock")));
 		try {
-			Date utilDate = new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("fechaCompra"));
+			Date utilDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fechaCompra"));
 			java.sql.Date fechaCompra=new java.sql.Date(utilDate.getTime());
 			producto.setFecha_compra(fechaCompra);
 		} catch (ParseException e) {
@@ -60,8 +60,8 @@ public class FormCrearProducto extends HttpServlet {
 		producto.setMade_in(request.getParameter("madein"));
 		producto.setPrecio(Double.parseDouble(request.getParameter("precio")));
 		producto.setDescuento(Integer.parseInt(request.getParameter("descuento")));
+		producto.setTallas(request.getParameterValues("talla"));
 		modeloproducto.insert(producto);
-		System.out.println(producto);
 		response.sendRedirect("index");
 	}
 

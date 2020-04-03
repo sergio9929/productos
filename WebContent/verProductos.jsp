@@ -20,9 +20,9 @@
   <div class="container my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="index">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">Procutos</li>
-        <li class="breadcrumb-item"><a hrejf="formCrearProducto.html">Nuevo</a></li>
+        <li class="breadcrumb-item"><a href="abrirFormCrearProducto">Nuevo</a></li>
       </ol>
     </nav>
     <div class="row">
@@ -39,11 +39,11 @@
           <tbody>
           <c:forEach items="${productos}" var="producto">
             <tr>
-              <td>${producto.getId()}</td>
+              <td>${producto.getNombre()}</td>
               <td>${producto.getStock()}</td>
               <td>${producto.getPrecio()}</td>
               <td>
-                <a class="btn btn-danger" href="">
+                <a class="btn btn-danger" href="eliminarProducto?id=${producto.getId()}">
                   <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
